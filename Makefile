@@ -5,7 +5,7 @@ SRCS = src/server.cpp src/graph.cpp src/dfs.cpp src/auth.cpp src/campus.cpp
 TARGET = campus_server
 
 all: $(TARGET)
-	@echo "✅  Build done. Run:  make run"
+	@echo " Build done. Run:  make run"
 
 $(TARGET): $(SRCS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRCS)
