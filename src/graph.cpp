@@ -62,7 +62,8 @@ map<string,int> dijkstra(const string& src, map<string,string>& prev) {
 
         for (auto& edge : campusGraph[u]) {
             int newDist = dist[u] + edge.weight;
-            if (newDist < dist[edge.to]) {
+            if (newDist < dist[edge.to]) 
+            {
                 dist[edge.to]  = newDist;
                 prev[edge.to]  = u;        
                 pq.push({newDist, edge.to});
