@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CampusNav – Smart Academic System</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="auth-screen">
+  <div class="auth-box">
+    <div class="auth-logo">🏛️ Campus<span>Nav</span></div>
+    <div class="auth-sub">Smart Academic Management System</div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="tab('login')">Login</button>
+      <button class="auth-tab"        onclick="tab('register')">Register</button>
+    </div>
+
+    <div id="tab-login">
+      <div class="form-group">
+        <label>Username</label>
+        <input id="lu" type="text" placeholder="Enter username"/>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input id="lp" type="password" placeholder="Enter password"/>
+      </div>
+      <button class="btn btn-blue btn-full" onclick="doLogin()">Login →</button>
+      <div id="login-msg" class="msg"></div>
+    </div>
+
+    <div id="tab-register" style="display:none">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input id="rn" type="text" placeholder="Full name"/>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input id="re" type="email" placeholder="email@example.com"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Username</label>
+          <input id="ru" type="text" placeholder="Choose username"/>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input id="rp" type="password" placeholder="Choose password"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Role</label>
+        <select id="rr">
+          <option value="student">Student</option>
+          <option value="faculty">Faculty</option>
+        </select>
+      </div>
+      <button class="btn btn-green btn-full" onclick="doRegister()">Submit Registration →</button>
+      <div id="reg-msg" class="msg"></div>
+    </div>
+  </div>
+</div>
+
+<div id="app">
+  <header>
+    <div class="logo">🏛️ Campus<span>Nav</span></div>
+    <nav id="nav">
+      <button class="active" onclick="showPanel('dashboard')">Dashboard</button>
+      <button onclick="showPanel('navigation')">🗺️ Navigate</button>
+      <button onclick="showPanel('classrooms')">🏫 Classrooms</button>
+      <button onclick="showPanel('timetable')">📅 Timetable</button>
+      <button id="nav-free"  style="display:none" onclick="showPanel('freeroom')">🔍 Free Rooms</button>
+      <button id="nav-admin" style="display:none" onclick="showPanel('admin')">⚙️ Admin</button>
+    </nav>
+    <div class="user-bar">
+      <b id="u-name">—</b>
+      <span id="u-role" class="badge b-blue">—</span>
+      <button id="logout" onclick="doLogout()">Logout</button>
+    </div>
+  </header>
+
+  <main>
+
+    <div id="panel-dashboard" class="panel active">
+      <div class="stats">
+        <div class="stat"><div class="val" style="color:var(--blue)">10</div><div class="lbl">Campus Locations</div></div>
+        <div class="stat"><div class="val" style="color:var(--green)">36+</div><div class="lbl">Rooms & Labs</div></div>
+        <div class="stat"><div class="val" style="color:var(--yellow)">4</div><div class="lbl">Courses</div></div>
+        <div class="stat"><div class="val" style="color:var(--purple)">65+</div><div class="lbl">Timetable Entries</div></div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="card-title">⚡ Quick Navigation</div>
+          <div class="frow">
+            <div class="form-group"><label>From</label><select id="d-from"></select></div>
+            <div class="form-group"><label>To</label><select id="d-to"></select></div>
+          </div>
+          <button class="btn btn-blue" onclick="quickNav()">Find Path</button>
+          <div id="d-nav-result" class="result"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">🔎 Quick Room Search</div>
+          <div class="form-group">
+            <label>Room ID (e.g. BT-101, CS-LAB2)</label>
+            <input id="d-room" type="text" placeholder="BT-101"/>
+          </div>
+          <button class="btn btn-blue" onclick="quickRoom()">Search</button>
+          <div id="d-room-result" class="result"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">📌 About</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.9">
+          Campus modelled as a <b style="color:var(--text)">weighted graph</b>.
+          <span class="badge b-blue">Dijkstra</span> finds shortest routes.
+          <span class="badge b-purple">DFS</span> explores all reachable paths.
+          Faculty can find <span class="badge b-green">free classrooms</span>.
+          New users need <span class="badge b-yellow">Admin approval</span> before login.
+        </p>
+      </div>
+    </div>
+
+    <div id="panel-navigation" class="panel">
+      <div style="display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:start">
+
+        <div>
+          <div class="card">
+            <div class="card-title">⚡ Dijkstra – Shortest Path</div>
+            <div class="form-group"><label>From</label><select id="n-from"></select></div>
+            <div class="form-group"><label>To</label><select id="n-to"></select></div>
+            <button class="btn btn-blue btn-full" onclick="runDijkstra()">Find Shortest Path</button>
+            <div id="n-result" class="result"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">🔍 DFS – Explore/Find Paths</div>
+            
+            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+              <p style="font-size: 11px; color: var(--muted); margin-bottom: 8px;"><b>OPTION 1:</b> Full Traversal</p>
+              <div class="form-group"><label>Start Node</label><select id="dfs-from"></select></div>
+              <button class="btn btn-outline btn-full btn-sm" onclick="runDFS()">Explore All Nodes</button>
+            </div>
+
+            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 12px;">
+              <p style="font-size: 11px; color: var(--muted); margin-bottom: 8px;"><b>OPTION 2:</b> Find All Paths (Backtracking)</p>
+              <div class="form-group"><label>From</label><select id="dfs-path-from"></select></div>
+              <div class="form-group"><label>To</label><select id="dfs-path-to"></select></div>
+              <button class="btn btn-outline btn-full btn-sm" onclick="runAllPaths()">Search All Routes</button>
+            </div>
+            
+            <div id="dfs-result" class="result"></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:0">
+          <div class="card-title">🗺️ Campus Map</div>
+          <div id="map-wrap">
+            <svg id="map-svg" viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M40 0 L0 0 0 40" fill="none" stroke="#1a2030" stroke-width="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="800" height="460" fill="url(#grid)"/>
+              <g id="edges-g"></g>
+              <g id="nodes-g"></g>
+            </svg>
+          </div>
+          <p style="font-size:11px;color:var(--muted);margin-top:8px">
+            Edge numbers = distance in metres &nbsp;|&nbsp;
+            <span style="color:var(--blue)">●</span> Dijkstra &nbsp;
+            <span style="color:var(--purple)">●</span> DFS &nbsp;
+            <span style="color:var(--green)">●</span> Source &nbsp;
+            <span style="color:var(--red)">●</span> Destination
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="panel-classrooms" class="panel">
+      <div class="card">
+        <div class="card-title">🔎 Search Classroom</div>
+        <div class="frow">
+          <div class="form-group">
+            <label>Room ID</label>
+            <input id="r-id" type="text" placeholder="BT-101, CS-LAB2, PL-101 …"/>
+          </div>
+          <div class="form-group">
+            <label>Your current building (for navigation)</label>
+            <select id="r-from"></select>
+          </div>
+        </div>
+        <button class="btn btn-blue" onclick="searchRoom()">Search & Navigate</button>
+        <div id="r-result" class="result"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🏛️ All Rooms by Building</div>
+        <div id="rooms-table">Loading…</div>
+      </div>
+    </div>
+
+    <div id="panel-timetable" class="panel">
+      <div class="card">
+        <div class="card-title">📅 Timetable</div>
+        <div class="frow">
+          <div class="form-group" style="max-width:180px">
+            <label>Course</label>
+            <select id="tt-course" onchange="loadTT()">
+              <option value="BTECH">BTech</option>
+              <option value="BCA">BCA</option>
+              <option value="BBA">BBA</option>
+              <option value="MCA">MCA</option>
+            </select>
+          </div>
+          <button class="btn btn-outline" onclick="loadTT()">↻ Refresh</button>
+        </div>
+      </div>
+      <div id="tt-display"></div>
+    </div>
+
+    <div id="panel-freeroom" class="panel">
+      <div class="card">
+        <div class="card-title">🔍 Find Free Classrooms</div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px">
+          Search available classrooms to schedule extra classes.
+        </p>
+        <div class="frow">
+          <div class="form-group">
+            <label>Day</label>
+            <select id="fr-day">
+              <option>Monday</option><option>Tuesday</option>
+              <option>Wednesday</option><option>Thursday</option><option>Friday</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Time Slot</label>
+            <select id="fr-time">
+              <option>09:00-10:00</option><option>10:00-11:00</option>
+              <option>11:00-12:00</option><option>12:00-13:00</option>
+              <option>14:00-15:00</option><option>15:00-16:00</option>
+            </select>
+          </div>
+          <button class="btn btn-green" onclick="findFree()">Search Free Rooms</button>
+        </div>
+        <div id="fr-result"></div>
+      </div>
+    </div>
+
+    <div id="panel-admin" class="panel">
+      <div class="card">
+        <div class="card-title">⏳ Pending Registrations</div>
+        <button class="btn btn-outline btn-sm" onclick="loadPending()" style="margin-bottom:14px">↻ Refresh</button>
+        <div id="pending-list">Loading…</div>
+      </div>
+      <div class="card">
+        <div class="card-title">👥 Approved Users</div>
+        <div id="users-list">Loading…</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div id="toast"></div>
+<script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+admin|admin123|admin
+piyush|12345678|faculty
+piyushbh|222|student
+66|66|faculty
+1234|1234|faculty
+123|222|faculty
+rinku|12345|student
+sarthi|111|student

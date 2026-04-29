@@ -1,0 +1,67 @@
+BTECH|Monday|09:00-10:00|Mathematics|Dr. Sharma|BT-101|BTech|1
+BTECH|Monday|10:00-11:00|Physics|Dr. Verma|BT-102|BTech|1
+BTECH|Monday|11:00-12:00|C Programming|Dr. Singh|BT-201|BTech|2
+BTECH|Monday|14:00-15:00|English|Dr. Gupta|BT-102|BTech|1
+BTECH|Tuesday|09:00-10:00|Chemistry|Dr. Rao|BT-103|BTech|1
+BTECH|Tuesday|10:00-11:00|Mathematics|Dr. Sharma|BT-101|BTech|1
+BTECH|Tuesday|11:00-12:00|Physics Lab|Dr. Verma|BT-LAB1|BTech|0
+BTECH|Tuesday|14:00-15:00|C Programming|Dr. Singh|BT-201|BTech|2
+BTECH|Wednesday|09:00-10:00|English|Dr. Gupta|BT-102|BTech|1
+BTECH|Wednesday|10:00-12:00|Chemistry Lab|Dr. Rao|BT-LAB2|BTech|0
+BTECH|Wednesday|14:00-15:00|Mathematics|Dr. Sharma|BT-101|BTech|1
+BTECH|Thursday|09:00-10:00|C Programming|Dr. Singh|BT-201|BTech|2
+BTECH|Thursday|10:00-11:00|Chemistry|Dr. Rao|BT-103|BTech|1
+BTECH|Thursday|14:00-15:00|Physics|Dr. Verma|BT-102|BTech|1
+BTECH|Friday|09:00-10:00|Mathematics|Dr. Sharma|BT-101|BTech|1
+BTECH|Friday|10:00-11:00|English|Dr. Gupta|BT-102|BTech|1
+BTECH|Friday|11:00-12:00|C Programming Lab|Dr. Singh|BT-LAB3|BTech|0
+BCA|Monday|09:00-10:00|Data Structures|Dr. Mehta|CS-101|CSIT|1
+BCA|Monday|10:00-11:00|Web Technology|Dr. Joshi|CS-201|CSIT|2
+BCA|Monday|11:00-12:00|DBMS|Dr. Kumar|CS-102|CSIT|1
+BCA|Monday|14:00-15:00|Mathematics|Dr. Sharma|CS-103|CSIT|1
+BCA|Tuesday|09:00-10:00|Operating System|Dr. Patel|CS-301|CSIT|3
+BCA|Tuesday|10:00-11:00|Data Structures|Dr. Mehta|CS-101|CSIT|1
+BCA|Tuesday|11:00-12:00|Web Tech Lab|Dr. Joshi|CS-LAB1|CSIT|0
+BCA|Tuesday|14:00-15:00|DBMS|Dr. Kumar|CS-102|CSIT|1
+BCA|Wednesday|09:00-10:00|Mathematics|Dr. Sharma|CS-103|CSIT|1
+BCA|Wednesday|10:00-12:00|DS Lab|Dr. Mehta|CS-LAB2|CSIT|0
+BCA|Wednesday|14:00-15:00|Operating System|Dr. Patel|CS-301|CSIT|3
+BCA|Thursday|09:00-10:00|Web Technology|Dr. Joshi|CS-201|CSIT|2
+BCA|Thursday|10:00-11:00|DBMS|Dr. Kumar|CS-102|CSIT|1
+BCA|Thursday|14:00-15:00|Data Structures|Dr. Mehta|CS-101|CSIT|1
+BCA|Friday|09:00-10:00|Operating System|Dr. Patel|CS-301|CSIT|3
+BCA|Friday|10:00-11:00|Mathematics|Dr. Sharma|CS-103|CSIT|1
+BCA|Friday|11:00-12:00|DBMS Lab|Dr. Kumar|CS-LAB3|CSIT|0
+BBA|Monday|09:00-10:00|Business Management|Dr. Arora|AR-101|Aryabhatta|1
+BBA|Monday|10:00-11:00|Accounting|Dr. Saxena|AR-102|Aryabhatta|1
+BBA|Monday|11:00-12:00|Economics|Dr. Mishra|AR-201|Aryabhatta|2
+BBA|Monday|14:00-15:00|Marketing|Dr. Tiwari|AR-202|Aryabhatta|2
+BBA|Tuesday|09:00-10:00|Business Law|Dr. Arora|AR-101|Aryabhatta|1
+BBA|Tuesday|10:00-11:00|Accounting|Dr. Saxena|AR-102|Aryabhatta|1
+BBA|Tuesday|14:00-15:00|Economics|Dr. Mishra|AR-201|Aryabhatta|2
+BBA|Wednesday|09:00-10:00|Marketing|Dr. Tiwari|AR-202|Aryabhatta|2
+BBA|Wednesday|10:00-11:00|Business Management|Dr. Arora|AR-101|Aryabhatta|1
+BBA|Wednesday|14:00-15:00|Accounting|Dr. Saxena|AR-102|Aryabhatta|1
+BBA|Thursday|09:00-10:00|Economics|Dr. Mishra|AR-201|Aryabhatta|2
+BBA|Thursday|10:00-11:00|Marketing|Dr. Tiwari|AR-202|Aryabhatta|2
+BBA|Thursday|14:00-15:00|Business Law|Dr. Arora|AR-101|Aryabhatta|1
+BBA|Friday|09:00-10:00|Accounting|Dr. Saxena|AR-102|Aryabhatta|1
+BBA|Friday|10:00-11:00|Business Management|Dr. Arora|AR-101|Aryabhatta|1
+BBA|Friday|11:00-12:00|Economics|Dr. Mishra|AR-201|Aryabhatta|2
+MCA|Monday|09:00-10:00|Advanced Algorithms|Dr. Iyer|CS-301|CSIT|3
+MCA|Monday|10:00-11:00|Machine Learning|Dr. Reddy|PL-101|ParamLab|1
+MCA|Monday|11:00-12:00|Cloud Computing|Dr. Nair|PL-102|ParamLab|1
+MCA|Monday|14:00-15:00|Software Engineering|Dr. Mehta|CS-201|CSIT|2
+MCA|Tuesday|09:00-10:00|Advanced Algorithms|Dr. Iyer|CS-301|CSIT|3
+MCA|Tuesday|10:00-11:00|ML Lab|Dr. Reddy|PL-LAB1|ParamLab|0
+MCA|Tuesday|11:00-12:00|Cloud Computing|Dr. Nair|PL-102|ParamLab|1
+MCA|Tuesday|14:00-15:00|Software Engineering|Dr. Mehta|CS-201|CSIT|2
+MCA|Wednesday|09:00-10:00|Machine Learning|Dr. Reddy|PL-101|ParamLab|1
+MCA|Wednesday|10:00-12:00|Cloud Lab|Dr. Nair|PL-LAB2|ParamLab|0
+MCA|Wednesday|14:00-15:00|Advanced Algorithms|Dr. Iyer|CS-301|CSIT|3
+MCA|Thursday|09:00-10:00|Software Engineering|Dr. Mehta|CS-201|CSIT|2
+MCA|Thursday|10:00-11:00|Machine Learning|Dr. Reddy|PL-101|ParamLab|1
+MCA|Thursday|14:00-15:00|Cloud Computing|Dr. Nair|PL-102|ParamLab|1
+MCA|Friday|09:00-10:00|Advanced Algorithms|Dr. Iyer|CS-301|CSIT|3
+MCA|Friday|10:00-11:00|Software Engineering|Dr. Mehta|CS-201|CSIT|2
+MCA|Friday|11:00-12:00|ML Lab|Dr. Reddy|PL-LAB1|ParamLab|0
